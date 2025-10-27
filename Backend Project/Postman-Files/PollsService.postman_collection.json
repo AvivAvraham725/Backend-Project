@@ -1,0 +1,89 @@
+{
+  "info": {
+    "name": "Polls Service (EN)",
+    "_postman_id": "polls-service-collection-en",
+    "description": "CRUD API for Polls Service (Questions & Answers)",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Create Question",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"What is your favorite color?\",\n  \"userId\": 1\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8081/api/questions",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8081",
+          "path": ["api", "questions"]
+        }
+      }
+    },
+    {
+      "name": "Get All Questions",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:8081/api/questions",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8081",
+          "path": ["api", "questions"]
+        }
+      }
+    },
+    {
+      "name": "Create Answer",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"text\": \"Blue\",\n  \"questionId\": 1,\n  \"userId\": 1\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8081/api/answers",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8081",
+          "path": ["api", "answers"]
+        }
+      }
+    },
+    {
+      "name": "Get All Answers",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:8081/api/answers",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8081",
+          "path": ["api", "answers"]
+        }
+      }
+    },
+    {
+      "name": "Delete Question (Cascade Answers)",
+      "request": {
+        "method": "DELETE",
+        "url": {
+          "raw": "http://localhost:8081/api/questions/1",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8081",
+          "path": ["api", "questions", "1"]
+        }
+      }
+    }
+  ]
+}
